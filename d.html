@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>box-shadow-experiment</title>
+        <style type="text/css">
+            body {
+                background-color: #000;
+            }
+            
+            #d {
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                border-radius: 100%;
+                background-color: #fff;
+                box-shadow: 0 0 10px 10px white;
+                top: 49%;
+                left: 48.85%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="d"></div>
+        <script type="text/javascript">
+            window.onload = function(){
+                var bsDiv = document.getElementById("d");
+                var x, y;
+                window.addEventListener('mousemove', function(event){
+                    x = event.clientX;
+                    y = event.clientY;                    
+                    if ( typeof x !== 'undefined' ){
+                        bsDiv.style.left = x + "px";
+                        bsDiv.style.top = y + "px";
+                    }
+                }, false);
+            }
+        </script>
+    </body>
+</html>
